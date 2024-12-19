@@ -1,1 +1,15 @@
-<p>rick-home works!</p>
+<div style="min-height: 100vh; background: linear-gradient(to bottom, #808080, #000000);">
+  <h1>
+    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 16px; gap: 0;">
+      <rick-button action="prev" (click)="changePage('prev')"></rick-button>
+      <rick-searcher (search)="searchCharacter($event)"></rick-searcher>
+      <rick-button action="next" (click)="changePage('next')"></rick-button>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <rick-character-card
+        *ngFor="let character of characters"
+        [character]="character">
+      </rick-character-card>
+    </div>
+  </h1>
+</div>
